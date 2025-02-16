@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ExcelExplorerApp.Models.Item>
+
+<h2>Items</h2>
+
+<a href="/Item/Upload">Upload Excel</a>
+
+@if (ViewData["Message"] != null)
+{
+    <p>@ViewData["Message"]</p>
+}
+@if (Model == null)
+{
+    <p>The model is null.</p>
+}
+@if (Model != null && Model.Any())
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Dept</th>
+                <th>Division</th>
+                <th>Badge Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Dept</td>
+                    <td>@item.Division</td>
+                    <td>@item.BadgeType</td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.Id })">Edit</a>
+                        |
+                        <a href="@Url.Action("Delete", new { id = item.Id })">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No items found.</p>
+}
