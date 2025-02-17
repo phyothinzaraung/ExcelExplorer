@@ -79,3 +79,4 @@
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.pdb
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.genruntimeconfig.cache
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ref/ExcelExplorerApp.dll
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.sourcelink.json

@@ -30,7 +30,7 @@ namespace ExcelExplorerApp.Controllers
 
         public IActionResult Upload()
         {
-            return View("~/Views/Home/Upload.cshtml");
+            return View("~/Views/Item/Upload.cshtml");
         }
 
         //POST: Item/Upload
