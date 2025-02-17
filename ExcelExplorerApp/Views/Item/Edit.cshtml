@@ -4,32 +4,40 @@
     ViewData["Title"] = "Edit Item";
 }
 
-<h1>Edit Item</h1>
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Edit Item</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" id="Id" name="Id" value="@Model.Id" />
 
-<form asp-action="Edit" method="post">
-    <div class="form-group">
-        <label for="Title">Title</label>
-        <input type="text" id="Title" name="Title" class="form-control" value="@Model.Title" required />
+                <div class="mb-3">
+                    <label for="Title" class="form-label">Title</label>
+                    <input type="text" id="Title" name="Title" class="form-control" value="@Model.Title" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Dept" class="form-label">Department</label>
+                    <input type="text" id="Dept" name="Dept" class="form-control" value="@Model.Dept" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Division" class="form-label">Division</label>
+                    <input type="text" id="Division" name="Division" class="form-control" value="@Model.Division" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="BadgeType" class="form-label">Badge Type</label>
+                    <input type="text" id="BadgeType" name="BadgeType" class="form-control" value="@Model.BadgeType" required />
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a href="@Url.Action("Index", "Item")" class="btn btn-secondary">Back to List</a>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
     </div>
-
-    <div class="form-group">
-        <label for="Dept">Department</label>
-        <input type="text" id="Dept" name="Dept" class="form-control" value="@Model.Dept" required />
-    </div>
-
-    <div class="form-group">
-        <label for="Division">Division</label>
-        <input type="text" id="Division" name="Division" class="form-control" value="@Model.Division" required />
-    </div>
-
-    <div class="form-group">
-        <label for="BadgeType">Badge Type</label>
-        <input type="text" id="BadgeType" name="BadgeType" class="form-control" value="@Model.BadgeType" required />
-    </div>
-
-    <input type="hidden" id="Id" value="@Model.Id" />
-
-    <button type="submit" class="btn btn-primary">Save Changes</button>
-
-    <a href="@Url.Action("Index", "Item")">Back to List</a>
-</form>
+</div>

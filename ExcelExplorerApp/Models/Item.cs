@@ -7,7 +7,7 @@ namespace ExcelExplorerApp.Models
         public required string Title {get; set;}
         public required string Dept {get; set;}
         public required string Division {get; set;}
-        public required int BadgeTypeID { get; set; }
+        public int BadgeTypeID { get; set; }
         public required string BadgeType { get; set; }
     }
 

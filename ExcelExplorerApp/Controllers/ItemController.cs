@@ -40,33 +40,55 @@ namespace ExcelExplorerApp.Controllers
         {
             if (file != null && file.Length > 0)
             {
+                var items = _context.Items.ToList();
+                _context.Items.RemoveRange(items);
+                await _context.SaveChangesAsync();
+
                 using (var stream = new MemoryStream())
                 {
                     await file.CopyToAsync(stream);
                     using (var package = new ExcelPackage(stream))
                     {
                         var worksheet = package.Workbook.Worksheets[0];
-                        var rowCount = worksheet.Dimension?.Rows ?? 0; // Ensure that the worksheet has dimensions
+                        int rowCount = worksheet.Dimension.Rows;
 
                         for (int row = 2; row <= rowCount; row++)
                         {
                             var item = new Item
                             {
-                                Title = worksheet.Cells[row, 1].Text,
-                                Dept = worksheet.Cells[row, 2].Text,
-                                Division = worksheet.Cells[row, 3].Text,
-                                BadgeTypeID = int.TryParse(worksheet.Cells[row, 4].Text, out int badgeTypeId) ? badgeTypeId : 0, // Converting to int
-                                BadgeType = worksheet.Cells[row, 5].Text
+                                Id = int.Parse(worksheet.Cells[row, 1].Text),
+                                Title = worksheet.Cells[row, 2].Text,
+                                Dept = worksheet.Cells[row, 3].Text,
+                                Division = worksheet.Cells[row, 4].Text,
+                                BadgeType = worksheet.Cells[row, 6].Text
                             };
 
-                            _context.Add(item);
+                            string badgeTypeString = worksheet.Cells[row, 5].Text;
+                            if (int.TryParse(badgeTypeString, out int badgeTypeID))
+                            {
+                                item.BadgeTypeID = badgeTypeID;
+                            }
+                            else
+                            {
+                                item.BadgeTypeID = 0;
+                                Console.WriteLine($"Invalid BadgeTypeID at row {row}: {badgeTypeString}");
+                            }
+
+                            _context.Items.Add(item);
                         }
                         await _context.SaveChangesAsync();
+                        ViewData["Message"] = "Data successfully uploaded.";
                     }
                 }
             }
-            return RedirectToAction("Index", "Home");
+            else
+            {
+                ViewData["Message"] = "Please select a file to upload.";
+            }
+
+            return RedirectToAction("Index", "Item");
         }
+
 
         //GET: Item/Edit
         public async Task<IActionResult> Edit(int? id)

@@ -1,48 +1,55 @@
 ﻿@model IEnumerable<ExcelExplorerApp.Models.Item>
 
-<h2>Items</h2>
+<h2 class="mb-4">Items</h2>
 
-<a href="/Item/Upload">Upload Excel</a>
+<a href="/Item/Upload" class="btn btn-primary mb-3">Upload Excel</a>
 
 @if (ViewData["Message"] != null)
 {
-    <p>@ViewData["Message"]</p>
+    <div class="alert alert-info">@ViewData["Message"]</div>
 }
+
 @if (Model == null)
 {
-    <p>The model is null.</p>
+    <p class="text-danger">The model is null.</p>
 }
+
 @if (Model != null && Model.Any())
 {
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Dept</th>
-                <th>Division</th>
-                <th>Badge Type</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
                 <tr>
-                    <td>@item.Title</td>
-                    <td>@item.Dept</td>
-                    <td>@item.Division</td>
-                    <td>@item.BadgeType</td>
-                    <td>
-                        <a href="@Url.Action("Edit", new { id = item.Id })">Edit</a>
-                        |
-                        <a href="@Url.Action("Delete", new { id = item.Id })">Delete</a>
-                    </td>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Department</th>
+                    <th>Division</th>
+                    <th>Badge Type</th>
+                    <th>Actions</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Title</td>
+                        <td>@item.Dept</td>
+                        <td>@item.Division</td>
+                        <td>@item.BadgeType</td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-sm btn-danger">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 else
 {
-    <p>No items found.</p>
+    <p class="text-muted">No items found.</p>
 }

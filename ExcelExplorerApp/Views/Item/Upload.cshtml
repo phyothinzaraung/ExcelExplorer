@@ -2,9 +2,20 @@
     ViewData["Title"] = "Upload Excel";
 }
 
-<h2>Upload Excel File</h2>
-
-<form method="post" enctype="multipart/form-data">
-    <input type="file" name="file" />
-    <button type="submit">Upload</button>
-</form>
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Upload Excel File</h3>
+        </div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data" class="text-center">
+                <div class="mb-3">
+                    <input type="file" name="file" class="form-control" required />
+                </div>
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-upload"></i> Upload
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
