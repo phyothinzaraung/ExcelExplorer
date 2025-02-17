@@ -1,0 +1,35 @@
+@model ExcelExplorerApp.Models.Item
+
+@{
+    ViewData["Title"] = "Edit Item";
+}
+
+<h1>Edit Item</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" id="Title" name="Title" class="form-control" value="@Model.Title" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Dept">Department</label>
+        <input type="text" id="Dept" name="Dept" class="form-control" value="@Model.Dept" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Division">Division</label>
+        <input type="text" id="Division" name="Division" class="form-control" value="@Model.Division" required />
+    </div>
+
+    <div class="form-group">
+        <label for="BadgeType">Badge Type</label>
+        <input type="text" id="BadgeType" name="BadgeType" class="form-control" value="@Model.BadgeType" required />
+    </div>
+
+    <input type="hidden" id="Id" value="@Model.Id" />
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+
+    <a href="@Url.Action("Index", "Item")">Back to List</a>
+</form>

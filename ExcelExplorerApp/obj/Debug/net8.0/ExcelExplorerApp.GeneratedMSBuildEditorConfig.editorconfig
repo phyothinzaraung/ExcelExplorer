@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/macbookair/Desktop/C\#/ExcelExplorer/ExcelExplorerApp/Views/Item/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbS9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbookair/Desktop/C\#/ExcelExplorer/ExcelExplorerApp/Views/Item/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/macbookair/Desktop/C\#/ExcelExplorer/ExcelExplorerApp/Views/Item/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
