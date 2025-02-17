@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using ExcelExplorerApp.Data;
+using ExcelExplorerApp.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddAuthorization();
+builder.Services.AddScoped<IItemRepository, ItemRepository>();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

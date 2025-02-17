@@ -6,21 +6,22 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ExcelExplorerApp.Data;
+using ExcelExplorerApp.Repositories;
 
 namespace ExcelExplorerApp.Controllers
 {
     public class ItemController: Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IItemRepository _itemRepository;
 
-        public ItemController(ApplicationDbContext context)
+        public ItemController(IItemRepository itemRepository)
         {
-            _context = context;
+            _itemRepository = itemRepository;
         }
 
         public async Task<IActionResult> Index()
         {
-            var items = await _context.Items.ToListAsync();
+            var items = await _itemRepository.GetAllItemAsync();
             if (items == null || !items.Any())
             {
                 ViewData["Message"] = "No items found in the database.";
@@ -40,9 +41,7 @@ namespace ExcelExplorerApp.Controllers
         {
             if (file != null && file.Length > 0)
             {
-                var items = _context.Items.ToList();
-                _context.Items.RemoveRange(items);
-                await _context.SaveChangesAsync();
+                await _itemRepository.RemoveAllAsync();
 
                 using (var stream = new MemoryStream())
                 {
@@ -73,10 +72,8 @@ namespace ExcelExplorerApp.Controllers
                                 item.BadgeTypeID = 0;
                                 Console.WriteLine($"Invalid BadgeTypeID at row {row}: {badgeTypeString}");
                             }
-
-                            _context.Items.Add(item);
+                            await _itemRepository.AddItemAsync(item);
                         }
-                        await _context.SaveChangesAsync();
                         ViewData["Message"] = "Data successfully uploaded.";
                     }
                 }
@@ -98,7 +95,7 @@ namespace ExcelExplorerApp.Controllers
                 return NotFound();
             }
 
-            var item = await _context.Items.FindAsync(id);
+            var item = await _itemRepository.GetItemByIdAsync(id.Value);
             if (item == null)
             {
                 return NotFound();
@@ -119,8 +116,7 @@ namespace ExcelExplorerApp.Controllers
             {
                 try
                 {
-                    _context.Update(item);
-                    await _context.SaveChangesAsync();
+                    await _itemRepository.UpdateItemAsync(item);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -146,7 +142,7 @@ namespace ExcelExplorerApp.Controllers
                 return NotFound();
             }
 
-            var item = await _context.Items.FirstOrDefaultAsync(m => m.Id == id);
+            var item = await _itemRepository.GetItemByIdAsync(id.Value);
             if (item == null)
             {
                 return NotFound();
@@ -160,18 +156,13 @@ namespace ExcelExplorerApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var item = await _context.Items.FindAsync(id);
-            if (item != null)
-            {
-                _context.Items.Remove(item);
-                await _context.SaveChangesAsync();
-            }
+            await _itemRepository.DeleteItemAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool ItemExists(int id)
         {
-            return _context.Items.Any(e => e.Id == id);
+            return _itemRepository.GetAllItemAsync().Result.Any(e=> e.Id == id);
         }
     }
 }

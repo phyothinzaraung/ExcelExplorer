@@ -1,3 +1,12 @@
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.csproj.AssemblyReference.cache
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.AssemblyInfoInputs.cache
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.AssemblyInfo.cs
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.csproj.CoreCompileInputs.cache
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.MvcApplicationPartsAssemblyInfo.cache
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.RazorAssemblyInfo.cache
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.RazorAssemblyInfo.cs
+/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.sourcelink.json
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/bin/Debug/net8.0/appsettings.Development.json
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/bin/Debug/net8.0/appsettings.json
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/bin/Debug/net8.0/ExcelExplorerApp.staticwebassets.runtime.json
@@ -55,14 +64,6 @@
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Text.Encoding.CodePages.dll
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Windows.Extensions.dll
-/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.csproj.AssemblyReference.cache
-/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.GeneratedMSBuildEditorConfig.editorconfig
-/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.AssemblyInfoInputs.cache
-/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.AssemblyInfo.cs
-/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.csproj.CoreCompileInputs.cache
-/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.MvcApplicationPartsAssemblyInfo.cache
-/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.RazorAssemblyInfo.cache
-/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.RazorAssemblyInfo.cs
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/staticwebassets.build.json
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/staticwebassets.development.json
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/staticwebassets/msbuild.ExcelExplorerApp.Microsoft.AspNetCore.StaticWebAssets.props
@@ -79,4 +80,3 @@
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.pdb
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.genruntimeconfig.cache
 /Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ref/ExcelExplorerApp.dll
-/Users/macbookair/Desktop/C#/ExcelExplorer/ExcelExplorerApp/obj/Debug/net8.0/ExcelExplorerApp.sourcelink.json
